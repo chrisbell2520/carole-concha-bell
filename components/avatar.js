@@ -1,8 +1,13 @@
+import ImageCompDB from './ImageCompDB'
+
 export default function Avatar({ name, picture }) {
+  console.log(picture)
   return (
-    <div className="flex items-center">
-      <img src={picture} className="w-12 h-12 rounded-full mr-4" alt={name} />
-      <div className="text-xl font-bold">{name}</div>
+    <div>
+      {/* <div style={{ width: '100%', overflow: 'hidden'}}>
+        <ImageCompDB url={imageBuilder(picture).url()} objectFit='cover' layout='intrinsic' width='800' height='400' />
+      </div> */}
+      <div>{name}</div>
     </div>
   )
 }

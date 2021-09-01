@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 import ImageComp from './ImageComp'
+import Stories from './Stories'
 import Link from 'next/link'
 
 const IntroStyles = styled.div`
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 2rem;
     display: grid;
-    align-items: center;
+    align-items: flex-start;
     color: white;
   .introInner {
-    width: 80vw;
     padding: 4rem;
     h1 {
       font-size: 4rem;
@@ -17,6 +17,9 @@ const IntroStyles = styled.div`
     button {
       color: white;
       border: 1px solid white;
+    }
+    .posts {
+      width: 100%;
     }
   }
   .backer {
@@ -32,23 +35,21 @@ const IntroStyles = styled.div`
     }
 `
 
-export default function Intro() {
+export default function IntroPortfolio(props) {
+  const posts = props.posts
   return (
     <IntroStyles>
       <div className='backer'>
-        <ImageComp url='/aptCore/patrick-fore-0gkw_9fy0eQ-unsplash_dhhb0s' objectFit='cover' layout='fill'/>
+        <ImageComp url='/carole/marialaura-gionfriddo-XJqCp_LJbwU-unsplash_k7onb5' objectFit='cover' layout='fill'/>
       </div>
       <div className='introInner'>
-        <h1>Carole Concha Bell</h1>
-        <h2>Journalist</h2>
-        <h2>Author</h2>
-        <h2>Freelance PR</h2>
-        <Link href='/portfolio'>
-          <button>Portfolio</button>
-        </Link>
-        <Link href='/contact'>
-          <button>Get in touch</button>
-        </Link>
+        <h1>Portfolio</h1>
+          <button>Journalism</button>
+          <button>PR</button>
+          <button>All</button>
+       <div className='posts'>
+        <Stories posts={posts}/>
+        </div>
       </div>
     </IntroStyles>
   )

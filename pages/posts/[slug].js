@@ -1,18 +1,18 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import MoreStories from '../../components/more-stories'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
-import Comments from '../../components/comments'
-import SectionSeparator from '../../components/section-separator'
-import Layout from '../../components/layout'
+import Container from '../../components/Container'
+import PostBody from '../../components/PostBody'
+import Stories from '../../components/Stories'
+import Header from '../../components/Header'
+import PostHeader from '../../components/PostHeader'
+import Comments from '../../components/Comments'
+import SectionSeparator from '../../components/SectionSeparator'
+import Layout from '../../components/Layout'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
-import PostTitle from '../../components/post-title'
+import PostTitle from '../../components/PostTitle'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
-import Form from '../../components/form'
+import Form from '../../components/Form'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -47,7 +47,7 @@ export default function Post({ post, morePosts, preview }) {
             <Form _id={post._id} />
 
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            {morePosts.length > 0 && <Stories posts={morePosts} />}
           </>
         )}
       </Container>
